@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.errorCode{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.errorMessage{
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+}

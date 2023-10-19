@@ -1,0 +1,31 @@
+.container{
+    max-width: 1440px;
+    padding: 0 10px;
+    margin-inline: auto;
+}
+
+nav{
+    background-color: greenyellow;
+    padding: 20px;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
+}
+
+li{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+li:hover{
+    transform: translateY(5px);
+}
+
+.active{
+    color: blueviolet;
+}
