@@ -1,8 +1,8 @@
-import {baseCountryApiUrl, GET} from "../api.ts";
-import {CountryType} from "../../components/Country/All/CountryAll.tsx";
+import {baseCountryApiUrl, GET} from "../api/api.ts";
+import {CountryType} from "../api/response/types.ts";
 
 export const countryAllLoader = async () => {
-    const countries: CountryType[] = await GET(`${baseCountryApiUrl}/country/all`);
+    const countries: CountryType[] = await GET(`${baseCountryApiUrl}/all`);
 
     return countries;
 }

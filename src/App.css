@@ -4,6 +4,12 @@
     margin-inline: auto;
 }
 
+.container_inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 nav{
     background-color: greenyellow;
     padding: 20px;
@@ -13,6 +19,14 @@ nav{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
+}
+
+.sign-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 20px;
     list-style: none;
 }
@@ -28,4 +42,13 @@ li:hover{
 
 .active{
     color: blueviolet;
+}
+
+.sign-out{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px black solid;
 }

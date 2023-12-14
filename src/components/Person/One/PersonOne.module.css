@@ -1,4 +1,4 @@
-.countryWrapper{
+.personWrapper{
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
@@ -20,6 +20,10 @@
     background-color: white;
     border-radius: 15px;
     text-align: center;
+}
+
+.personInfo{
+    font-size: 20px;
 }
 
 .button{

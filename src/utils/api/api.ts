@@ -1,8 +1,8 @@
 export const baseApiUrl = "http://localhost:8080/api/v1"
-export const baseCountryApiUrl = "http://localhost:8081/api/v1"
-export const baseActorApiUrl = "http://localhost:8082/api/v1"
-export const baseDirectorApiUrl = "http://localhost:8083/api/v1"
-export const baseAwardApiUrl = "http://localhost:8084/api/v1"
+export const baseCountryApiUrl = "http://localhost:8090/api/v1/countries"
+export const baseAwardApiUrl = "http://localhost:8091/api/v1/awards"
+export const basePersonApiUrl = "http://localhost:8092/api/v1/people"
+export const baseAuthApiUrl = "http://localhost:8093/api/v1/auth"
 
 export const PUT = async (url: string, data: string) => {
     const response = await fetch(url, {
@@ -31,7 +31,11 @@ export const GET = async (url: string) => {
 
 export const PATCH = async (url: string, data: string) => {
     const response = await fetch(url, {
-        method: "PATCH"
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data
     })
 
     const responseData = await response.json()
@@ -42,6 +46,20 @@ export const PATCH = async (url: string, data: string) => {
 export const DELETE = async (url: string) => {
     const response = await fetch(url, {
         method: "DELETE"
+    })
+
+    const responseData = await response.json()
+
+    return responseData
+}
+
+export const POST = async (url: string, data: string) => {
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data
     })
 
     const responseData = await response.json()

@@ -1,4 +1,4 @@
-.countryWrapper{
+.awardWrapper{
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
@@ -8,6 +8,10 @@
     background-color: greenyellow;
     justify-items: center;
     margin-top: 10px;
+}
+
+.awardInfo{
+    font-size: 24px;
 }
 
 .edit{

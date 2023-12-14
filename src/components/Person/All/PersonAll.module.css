@@ -7,7 +7,7 @@
     padding: 10px 0;
 }
 
-.countryWrapper{
+.personWrapper{
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
@@ -18,12 +18,12 @@
     justify-items: center;
 }
 
-.countryWrapper:hover{
+.personWrapper:hover{
     transform: translateY(5px);
     cursor: pointer;
 }
 
-.countryInfo{
+.personInfo{
 
 }
 

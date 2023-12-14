@@ -8,7 +8,7 @@ const NotFound = () => {
             <div>
                 <h1 className={styles.errorCode}>404</h1>
                 <h2 className={styles.errorMessage}>Not Found</h2>
-                <Link to={"/"}>Back to main page</Link>
+                <Link className={styles.link} to={"/"}>Back to main page</Link>
             </div>
         </div>
     );

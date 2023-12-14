@@ -1,25 +1,25 @@
 import React, {ChangeEvent, useState} from 'react';
-import styles from "./CountryEdit.module.css"
-import {useLoaderData} from "react-router-dom";
-import {baseCountryApiUrl, PATCH} from "../../../utils/api/api.ts";
+import {baseCountryApiUrl, PUT} from "../../../utils/api/api.ts";
+import styles from "./CountryAdd.module.css";
 import {CountryType} from "../../../utils/api/response/types.ts";
 
-const CountryEdit = () => {
-
-    const initState = useLoaderData() as CountryType
-
-    const [data, setData] = useState<CountryType>(initState);
+const CountryAdd = () => {
+    const [data, setData] = useState<CountryType>({
+        id: null,
+        isoCode: "",
+        name: ""
+    });
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        PATCH(`${baseCountryApiUrl}/update`, JSON.stringify(data)).then(res => alert(res.message)).catch(console.log)
+        PUT(`${baseCountryApiUrl}/add`, JSON.stringify(data)).then(res => alert(res.message)).catch(console.log)
     }
 
 
     console.log(data)
 
     return (
-        <div className={styles.editFormWrapper}>
+        <div className={styles.addFormWrapper}>
             <form onSubmit={handleSubmit}>
                 <label className={styles.label} htmlFor={"isoCode"}>ISO code:</label>
                 <input className={styles.input} type="text" name={"isoCode"} id={"isoCode"} value={data.isoCode} onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -33,11 +33,10 @@ const CountryEdit = () => {
                     newData.name = e.target.value;
                     setData(newData)
                 }}/>
-                <button className={styles.reset} type={"reset"} onClick={() => setData(initState)}>Reset</button>
-                <button className={styles.submit} type={"submit"}>Submit</button>
+                <button className={styles.add} type={"submit"}>Add</button>
             </form>
         </div>
     );
 };
 
-export default CountryEdit;
+export default CountryAdd;

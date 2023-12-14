@@ -7,7 +7,7 @@
     padding: 10px 0;
 }
 
-.countryWrapper{
+.awardWrapper{
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
@@ -18,13 +18,9 @@
     justify-items: center;
 }
 
-.countryWrapper:hover{
+.awardWrapper:hover{
     transform: translateY(5px);
     cursor: pointer;
-}
-
-.countryInfo{
-
 }
 
 .addWrapper{

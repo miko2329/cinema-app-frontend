@@ -1,0 +1,38 @@
+.addFormWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 65px);
+}
+
+.label{
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.input{
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 8px;
+    border: greenyellow 2px solid;
+    outline: none;
+    background-color: transparent;
+    padding: 5px;
+    margin-bottom: 15px;
+    width: 400px;
+}
+
+.add{
+    display: block;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    background-color: transparent;
+    border: greenyellow 2px solid;
+    outline: none;
+    width: 400px;
+    border-radius: 15px;
+}

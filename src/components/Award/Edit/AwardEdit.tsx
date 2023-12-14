@@ -1,18 +1,16 @@
 import React, {ChangeEvent, useState} from 'react';
-import styles from "./CountryEdit.module.css"
 import {useLoaderData} from "react-router-dom";
-import {baseCountryApiUrl, PATCH} from "../../../utils/api/api.ts";
-import {CountryType} from "../../../utils/api/response/types.ts";
+import {baseAwardApiUrl, PATCH} from "../../../utils/api/api.ts";
+import styles from "./AwardEdit.module.css";
+import {AwardType} from "../../../utils/api/response/types.ts";
+const AwardEdit = () => {
+    const initState = useLoaderData() as AwardType
 
-const CountryEdit = () => {
-
-    const initState = useLoaderData() as CountryType
-
-    const [data, setData] = useState<CountryType>(initState);
+    const [data, setData] = useState<AwardType>(initState);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        PATCH(`${baseCountryApiUrl}/update`, JSON.stringify(data)).then(res => alert(res.message)).catch(console.log)
+        PATCH(`${baseAwardApiUrl}/update`, JSON.stringify(data)).then(res => alert(res.message)).catch(console.log)
     }
 
 
@@ -21,12 +19,6 @@ const CountryEdit = () => {
     return (
         <div className={styles.editFormWrapper}>
             <form onSubmit={handleSubmit}>
-                <label className={styles.label} htmlFor={"isoCode"}>ISO code:</label>
-                <input className={styles.input} type="text" name={"isoCode"} id={"isoCode"} value={data.isoCode} onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                    const newData = {...data}
-                    newData.isoCode = e.target.value;
-                    setData(newData)
-                }}/>
                 <label className={styles.label} htmlFor={"name"}>Name:</label>
                 <input className={styles.input} type="text" name={"name"} id={"name"} value={data.name} onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     const newData = {...data}
@@ -40,4 +32,4 @@ const CountryEdit = () => {
     );
 };
 
-export default CountryEdit;
+export default AwardEdit;
